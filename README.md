@@ -69,3 +69,12 @@ Run the RPS game:
 ```sh
 python app/rps.py 
 ```
+
+##Testing
+
+Run tests: 
+
+```sh
+pytest
+```
+
