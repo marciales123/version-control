@@ -38,8 +38,12 @@ def send_mail_with_mailgun(recipient_address=MAILGUN_SENDER_ADDRESS,
         print("RESULT:", response.status_code)
         response.raise_for_status()
         print("Email sent successfully!")
+        return response.status_code
     except requests.exceptions.RequestException as e:
         print(f"Error sending email: {str(e)}")
 
-#SEND EXAMPLE EMAIL
-send_mail_with_mailgun()
+        return None
+
+if __name__ == "__main__":
+   #SEND EXAMPLE EMAIL
+   send_mail_with_mailgun()
