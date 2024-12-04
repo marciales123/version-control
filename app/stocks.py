@@ -5,8 +5,10 @@
 from pandas import read_csv
 from plotly.express import line
 
+
 from app.alpha_service import API_KEY
 from app.email_service import send_mail_with_mailgun
+
 
 def fetch_stocks_csv(symbol):
     request_url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={symbol}&apikey={API_KEY}&outputsize=full&datatype=csv"
@@ -71,8 +73,4 @@ if __name__ == "__main__":
             labels= {"x": "Date", "y": "Stock Price ($)"})
     fig.show()
 
-    #SEND email 
 
-    LATEST_PRICE = first_row['adjusted_close']
-
-    send_mail_with_mailgun(subject="Stocks Report", html_content=f"Latest price for {symbol} is {latest_price}")
