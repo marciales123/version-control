@@ -1,13 +1,16 @@
 # this is the "requirements.txt" file...
 
-python-dotenv
-
-requests
-
-pandas
+requests 
 
 plotly
 
-sendgrid ==6.5.0
+pandas
+
+python-dotenv
 
 pytest
+
+flask
+
+#used in production to run our web app
+gunicorn
